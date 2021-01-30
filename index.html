@@ -17,6 +17,7 @@
 		var starty=0;
 		var tox=0;
 		var toy=0;
+		var documentWidth=window.screen.availWidth;
 		$(document).on("pagecreate",function(){
 			event.preventDefault();
 			$("div").on("vmousedown",function(e){
@@ -35,10 +36,10 @@
 
 				var deltax=tox-startx;
 				var deltay=toy-starty;
-				// // 判断是否点击，小于某个值，不是移动操作
-				// if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
-				// 	return ;
-				// }
+				// 判断是否点击，小于某个值，不是移动操作
+				if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
+					return ;
+				}
 				
 				if(Math.abs(deltax)>=Math.abs(deltay)){
 					//x
