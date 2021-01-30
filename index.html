@@ -4,11 +4,77 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 	<title>威神V2048</title>
-	<link rel="stylesheet" type="text/css" href="css/2048.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/2048.css" media="all" />	
 	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<!-- <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script> -->
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="js/main2048.js"></script>
 	<script type="text/javascript" src="js/support2048.js"></script>
 	<script type="text/javascript" src="js/showanimation2048.js"></script>
+
+    <script>
+		var startx=0;
+		var starty=0;
+		var tox=0;
+		var toy=0;
+		$(document).on("pagecreate",function(){
+
+			$("div").on("vmousedown",function(e){
+				startx=e.pageX;
+				starty=e.pageY;
+				console.log(startx + ' ' + starty);
+			});     
+			$("div").on("vmouseup",function(e){
+				tox=e.pageX;
+				toy=e.pageY;
+
+				var deltax=tox-startx;
+				var deltay=toy-starty;
+				// // 判断是否点击，小于某个值，不是移动操作
+				// if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
+				// 	return ;
+				// }
+				console.log('d');
+				
+				if(Math.abs(deltax)>=Math.abs(deltay)){
+					//x
+					if(deltax>0){
+						//move right
+						if(moveRight()){
+							setTimeout("generateOneNumber()",210);
+							setTimeout("isGameOver()",300);
+						}
+						
+					}
+					else{
+						//move left
+						if(moveLeft()){
+							setTimeout("generateOneNumber()",210);
+							setTimeout("isGameOver()",300);
+							
+						}
+					}
+				}
+				else{
+					//y
+					if(deltay>0){
+						//move down 
+						if(moveDown()){
+							setTimeout("generateOneNumber()",210);
+							setTimeout("isGameOver()",300);
+						}
+					}
+					else{
+						//move up 
+						if(moveUp()){
+							setTimeout("generateOneNumber()",210);
+							setTimeout("isGameOver()",300);
+						}
+					}
+				}
+			});                   
+		});
+    </script>
 </head>
 <body>
 	<header>

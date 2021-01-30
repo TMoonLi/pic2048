@@ -17,7 +17,7 @@ var gridContainerWidth = documentWidth;
 $(document).ready(function(){
 	prepareForMobile();
 	newGame();
-});
+});                  
 
 
 function prepareForMobile(){
@@ -220,73 +220,73 @@ function generateOneNumber(){
  });
 
 
-document.addEventListener('touchstart',function(event){
-	//touches.event
-	event.preventDefault();
-	startx=event.targetTouches[0].pageX;
-	starty=event.targetTouches[0].pageY;
-    tox=startx
-    toy=starty
-});
+//document.addEventListener('touchstart',function(event){
+//	//touches.event
+//	event.preventDefault();
+//	startx=event.targetTouches[0].pageX;
+//	starty=event.targetTouches[0].pageY;
+//    tox=startx
+//    toy=starty
+//});
+//
+//document.addEventListener('touchmove',function(event){
+//	//touches.event
+//	event.preventDefault();
+//});
 
-document.addEventListener('touchmove',function(event){
-	//touches.event
-	event.preventDefault();
-});
 
-//document.addEventListener('swipeDown',function(event){
-document.addEventListener('touchend',function(event){
-	//changedTouches
-    alert('a')
-	event.preventDefault();
-	tox=event.changedTouches[0].pageX;
-	toy=event.changedTouches[0].pageY;
-	var deltax=tox-startx;
-	var deltay=toy-starty;
-	
-	// 判断是否点击，小于某个值，不是移动操作
-	if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
-		return ;
-	}
-	
-	
-	if(Math.abs(deltax)>=Math.abs(deltay)){
-		//x
-		if(deltax>0){
-			//move right
-			if(moveRight()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
-			
-		}
-		else{
-			//move left
-			if(moveLeft()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-				
-			}
-		}
-	}
-	else{
-		//y
-		if(deltay>0){
-			//move down 
-			if(moveDown()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
-		}
-		else{
-			//move up 
-			if(moveUp()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
-		}
-	}
-});
+//document.addEventListener('touchend',function(event){
+//	//changedTouches
+//    alert('a')
+//	event.preventDefault();
+//	tox=event.changedTouches[0].pageX;
+//	toy=event.changedTouches[0].pageY;
+//	var deltax=tox-startx;
+//	var deltay=toy-starty;
+//	
+//	// 判断是否点击，小于某个值，不是移动操作
+//	if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
+//		return ;
+//	}
+//	
+//	
+//	if(Math.abs(deltax)>=Math.abs(deltay)){
+//		//x
+//		if(deltax>0){
+//			//move right
+//			if(moveRight()){
+//				setTimeout("generateOneNumber()",210);
+//				setTimeout("isGameOver()",300);
+//			}
+//			
+//		}
+//		else{
+//			//move left
+//			if(moveLeft()){
+//				setTimeout("generateOneNumber()",210);
+//				setTimeout("isGameOver()",300);
+//				
+//			}
+//		}
+//	}
+//	else{
+//		//y
+//		if(deltay>0){
+//			//move down 
+//			if(moveDown()){
+//				setTimeout("generateOneNumber()",210);
+//				setTimeout("isGameOver()",300);
+//			}
+//		}
+//		else{
+//			//move up 
+//			if(moveUp()){
+//				setTimeout("generateOneNumber()",210);
+//				setTimeout("isGameOver()",300);
+//			}
+//		}
+//	}
+//});
 
 function moveLeft(){
 	if(!canMoveLeft(board)){
