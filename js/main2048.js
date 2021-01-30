@@ -222,7 +222,6 @@ function generateOneNumber(){
 
 document.addEventListener('touchstart',function(event){
 	//touches.event
-	event.preventDefault();
 	startx=event.touches[0].pageX;
 	starty=event.touches[0].pageY;
 });
