@@ -234,12 +234,10 @@ document.addEventListener('touchmove',function(event){
 	event.preventDefault();
 });
 
-
- $(document).touch("bottom",function(){
-        alert("bottom");
-    })
-document.addEventListener('touchend',function(event){
+document.addEventListener('swipeDown',function(event){
+//document.addEventListener('touchend',function(event){
 	//changedTouches
+    alert('a')
 	event.preventDefault();
 	tox=event.changedTouches[0].pageX;
 	toy=event.changedTouches[0].pageY;
