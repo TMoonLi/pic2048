@@ -226,12 +226,16 @@ document.addEventListener('touchstart',function(event){
 	starty=event.touches[0].pageY;
 });
 
+document.addEventListener('touchmove',function(event){
+	//touches.event
+	tox=event.touches[0].pageX;
+	toy=event.touches[0].pageY;
+});
+
 
 document.addEventListener('touchend',function(event){
 	//changedTouches
 	event.preventDefault();
-	tox=event.changedTouches[0].pageX;
-	toy=event.changedTouches[0].pageY;
 	
 	var deltax=tox-startx;
 	var deltay=toy-starty;
