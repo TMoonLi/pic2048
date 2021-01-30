@@ -237,10 +237,10 @@ document.addEventListener('touchmove',function(event){
 	var deltax=tox-startx;
 	var deltay=toy-starty;
 	
-	// // 判断是否点击，小于某个值，不是移动操作
-	// if(Math.abs(deltax)<0.1*documentWidth&&Math.abs(deltay)<0.1*documentWidth){
-	// 	return ;
-	// }
+	// 判断是否点击，小于某个值，不是移动操作
+	if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
+		return ;
+	}
 	
 	
 	if(Math.abs(deltax)>=Math.abs(deltay)){
