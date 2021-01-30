@@ -20,11 +20,13 @@
 		$(document).on("pagecreate",function(){
 
 			$("div").on("vmousedown",function(e){
+				event.preventDefault();
 				startx=e.pageX;
 				starty=e.pageY;
-				console.log(startx + ' ' + starty);
+				// console.log(startx + ' ' + starty);
 			});     
 			$("div").on("vmouseup",function(e){
+				event.preventDefault();
 				tox=e.pageX;
 				toy=e.pageY;
 
@@ -34,7 +36,6 @@
 				// if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
 				// 	return ;
 				// }
-				console.log('d');
 				
 				if(Math.abs(deltax)>=Math.abs(deltay)){
 					//x

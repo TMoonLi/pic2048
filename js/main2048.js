@@ -328,9 +328,9 @@ function moveUp(){
 	if(!canMoveUp(board)){
 		return false;
 	}
-	//document.addEventListener('touchmove',function(event){
-	//	event.preventDefault();
-	//});
+	document.addEventListener('touchmove',function(event){
+		event.preventDefault();
+	});
 
 	//moveUp
 	for(var j=0;j<4;j++)
@@ -405,9 +405,9 @@ function moveDown(){
 	if(!canMoveDown(board)){
 		return false;
 	}
-	//document.addEventListener('touchmove',function(event){
-	//	event.preventDefault();
-	//});
+	document.addEventListener('touchmove',function(event){
+		event.preventDefault();
+	});
 	//moveDown
 	for(var j=0;j<4;j++)
 		for(var i=2;i>=0;i--){
