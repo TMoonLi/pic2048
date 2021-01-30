@@ -184,72 +184,40 @@ function generateOneNumber(){
 	return true;
 }
 
-// $(document).mousedown(function(e) {
-// 	e.preventDefault();
-
-//     startX = e.originalEvent.changedTouches[0].pageX,
-// 	startY = e.originalEvent.changedTouches[0].pageY;
-// 	alert(e);
-	
-// });
-// $(document).mouseup(function(e) {
-// 	e.preventDefault();
-	
-//     moveEndX = e.originalEvent.changedTouches[0].pageX,
-//     moveEndY = e.originalEvent.changedTouches[0].pageY,
-//     X = moveEndX - startX,
-//     Y = moveEndY - startY;
-     
-//     if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
-//         alert("left 2 right");
-//     }
-//     else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
-//         alert("right 2 left");
-//     }
-//     else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
-//         alert("top 2 bottom");
-//     }
-//     else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
-//         alert("bottom 2 top");
-//     }
-//     else{
-//         alert("just touch");
-// 	}
-// });
-// $(document).keydown(function(event){
-// 	switch(event.keyCode){
-// 		case 37://left
-// 			if(moveLeft()){
-// 				setTimeout("generateOneNumber()",210);
-// 				setTimeout("isGameOver()",300);
+$(document).keydown(function(event){
+	switch(event.keyCode){
+		case 37://left
+			if(moveLeft()){
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isGameOver()",300);
 				
-// 			}
+			}
+	
+			break;
+		case 38://up
+			if(moveUp()){
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isGameOver()",300);
+			}
 			
-// 			break;
-// 		case 38://up
-// 			if(moveUp()){
-// 				setTimeout("generateOneNumber()",210);
-// 				setTimeout("isGameOver()",300);
-// 			}
+			break;
+		case 39://right
+			if(moveRight()){
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isGameOver()",300);
+			}
 			
-// 			break;
-// 		case 39://right
-// 			if(moveRight()){
-// 				setTimeout("generateOneNumber()",210);
-// 				setTimeout("isGameOver()",300);
-// 			}
-			
-// 			break;
-// 		case 40://down
-// 			if(moveDown()){
-// 				setTimeout("generateOneNumber()",210);
-// 				setTimeout("isGameOver()",300);
-// 			}
-// 			break;
-// 		default: //default
-// 			break;
-// 	}
-// });
+			break;
+		case 40://down
+			if(moveDown()){
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isGameOver()",300);
+			}
+			break;
+		default: //default
+			break;
+	}
+});
 
 
 document.addEventListener('touchstart',function(event){
@@ -263,17 +231,16 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchmove',function(event){
 	//changedTouches
 	event.preventDefault();
-	alert('b');
 	tox=event.changedTouches[0].pageX;
 	toy=event.changedTouches[0].pageY;
 	
 	var deltax=tox-startx;
 	var deltay=toy-starty;
 	
-	//判断是否点击，小于某个值，不是移动操作
-	// if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth){
-		// return ;
-	// }
+	// 判断是否点击，小于某个值，不是移动操作
+	if(Math.abs(deltax)<0.1*documentWidth&&Math.abs(deltay)<0.1*documentWidth){
+		return ;
+	}
 	
 	
 	if(Math.abs(deltax)>=Math.abs(deltay)){
