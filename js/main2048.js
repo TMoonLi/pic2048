@@ -225,6 +225,8 @@ document.addEventListener('touchstart',function(event){
 	event.preventDefault();
 	startx=event.touches[0].pageX;
 	starty=event.touches[0].pageY;
+    tox=startx
+    toy=starty
 });
 
 document.addEventListener('touchmove',function(event){
@@ -240,6 +242,7 @@ document.addEventListener('touchend',function(event){
 	event.preventDefault();
 	var deltax=tox-startx;
 	var deltay=toy-starty;
+    alert('a')
 	
 	// 判断是否点击，小于某个值，不是移动操作
 	if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
