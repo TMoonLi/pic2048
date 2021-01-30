@@ -242,7 +242,6 @@ document.addEventListener('touchend',function(event){
 	event.preventDefault();
 	var deltax=tox-startx;
 	var deltay=toy-starty;
-    alert('a')
 	
 	// 判断是否点击，小于某个值，不是移动操作
 	if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
