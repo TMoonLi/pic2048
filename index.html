@@ -26,10 +26,10 @@
 				starty=e.pageY;
 				// console.log(startx + ' ' + starty);
 			});  
+			// $("div").on("vmousemove",function(e){
+			// 	event.preventDefault();
+			// });      
 			$("div").on("vmousemove",function(e){
-				event.preventDefault();
-			});      
-			$("div").on("vmouseup",function(e){
 				event.preventDefault();
 				tox=e.pageX;
 				toy=e.pageY;
@@ -37,7 +37,7 @@
 				var deltax=tox-startx;
 				var deltay=toy-starty;
 				// 判断是否点击，小于某个值，不是移动操作
-				if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
+				if(Math.abs(deltax)<0.4*documentWidth&&Math.abs(deltay)<0.4*documentWidth){
 					return ;
 				}
 				
@@ -84,7 +84,7 @@
 <body>
 	<header>
 		<h1>2048 威神</h1>
-		<a href="javascript:newGame()" id="newGameButton">重新开始</a>
+		<!-- <a href="javascript:newGame()" id="newGameButton">重新开始</a> -->
 		<p>得分：<span id="score">0</span>&nbsp;&nbsp;最高分：<span id="maxScore">0</span></p>
 	</header>
 	<div id="gridContainer">
