@@ -255,16 +255,16 @@ function generateOneNumber(){
 document.addEventListener('touchstart',function(event){
 	//touches.event
 	event.preventDefault();
-    alert('a');
+	alert('a');
 	startx=event.touches[0].pageX;
 	starty=event.touches[0].pageY;
 });
 
 
-document.addEventListener('touchend',function(event){
+document.addEventListener('touchmove',function(event){
 	//changedTouches
 	event.preventDefault();
-    alert('a');
+	alert('b');
 	tox=event.changedTouches[0].pageX;
 	toy=event.changedTouches[0].pageY;
 	
@@ -272,9 +272,9 @@ document.addEventListener('touchend',function(event){
 	var deltay=toy-starty;
 	
 	//判断是否点击，小于某个值，不是移动操作
-	if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth){
-		return ;
-	}
+	// if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth){
+		// return ;
+	// }
 	
 	
 	if(Math.abs(deltax)>=Math.abs(deltay)){
