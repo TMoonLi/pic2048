@@ -255,7 +255,6 @@ function generateOneNumber(){
 document.addEventListener('touchstart',function(event){
 	//touches.event
 	event.preventDefault();
-	alert('a');
 	startx=event.touches[0].pageX;
 	starty=event.touches[0].pageY;
 });
