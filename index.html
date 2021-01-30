@@ -17,6 +17,8 @@
 		var starty=0;
 		var tox=0;
 		var toy=0;
+		var mymutex=0;
+
 		var documentWidth=window.screen.availWidth;
 		$(document).on("pagecreate",function(){
 			event.preventDefault();
@@ -24,6 +26,7 @@
 				event.preventDefault();
 				startx=e.pageX;
 				starty=e.pageY;
+				mymutex = 1;
 				// console.log(startx + ' ' + starty);
 			});  
 			$("div").on("vmousemove",function(e){
@@ -40,7 +43,8 @@
 				if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth){
 					return ;
 				}
-				
+				if(mymutex == 0) return;
+				mymutex = 0;
 				if(Math.abs(deltax)>=Math.abs(deltay)){
 					//x
 					if(deltax>0){

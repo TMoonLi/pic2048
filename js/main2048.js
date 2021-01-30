@@ -61,6 +61,15 @@ function init(){
 		hasConflicted[i]=new Array();
 		for(var j=0;j<4;j++){
 			board[i][j]=0;
+			// if(i == 0){
+			// 	var randNumber;
+			// 	if(j < 2)
+			// 		randNumber = 2;
+			// 	else if(j == 2)
+			// 		randNumber = 4;
+			// 	board[i][j]=randNumber;
+			// 	showNumberWithAnimation(i,j,randNumber);
+			// }
 			hasConflicted[i][j]=false;
 		}
 	}
