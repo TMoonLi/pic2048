@@ -222,6 +222,7 @@ function generateOneNumber(){
 
 document.addEventListener('touchstart',function(event){
 	//touches.event
+	event.preventDefault();
 	startx=event.touches[0].pageX;
 	starty=event.touches[0].pageY;
 });
@@ -237,7 +238,6 @@ document.addEventListener('touchmove',function(event){
 document.addEventListener('touchend',function(event){
 	//changedTouches
 	event.preventDefault();
-    alert('a')
 	var deltax=tox-startx;
 	var deltay=toy-starty;
 	
