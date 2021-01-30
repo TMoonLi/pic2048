@@ -26,10 +26,10 @@
 				starty=e.pageY;
 				// console.log(startx + ' ' + starty);
 			});  
-			// $("div").on("vmousemove",function(e){
-			// 	event.preventDefault();
-			// });      
 			$("div").on("vmousemove",function(e){
+				event.preventDefault();
+			});      
+			$("div").on("vmouseend",function(e){
 				event.preventDefault();
 				tox=e.pageX;
 				toy=e.pageY;
@@ -37,7 +37,7 @@
 				var deltax=tox-startx;
 				var deltay=toy-starty;
 				// 判断是否点击，小于某个值，不是移动操作
-				if(Math.abs(deltax)<0.4*documentWidth&&Math.abs(deltay)<0.4*documentWidth){
+				if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth){
 					return ;
 				}
 				
