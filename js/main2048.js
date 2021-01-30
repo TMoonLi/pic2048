@@ -184,40 +184,40 @@ function generateOneNumber(){
 	return true;
 }
 
-$(document).keydown(function(event){
-	switch(event.keyCode){
-		case 37://left
-			if(moveLeft()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
+// $(document).keydown(function(event){
+// 	switch(event.keyCode){
+// 		case 37://left
+// 			if(moveLeft()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
 				
-			}
+// 			}
 	
-			break;
-		case 38://up
-			if(moveUp()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
+// 			break;
+// 		case 38://up
+// 			if(moveUp()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
+// 			}
 			
-			break;
-		case 39://right
-			if(moveRight()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
+// 			break;
+// 		case 39://right
+// 			if(moveRight()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
+// 			}
 			
-			break;
-		case 40://down
-			if(moveDown()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
-			break;
-		default: //default
-			break;
-	}
-});
+// 			break;
+// 		case 40://down
+// 			if(moveDown()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
+// 			}
+// 			break;
+// 		default: //default
+// 			break;
+// 	}
+// });
 
 
 document.addEventListener('touchstart',function(event){
