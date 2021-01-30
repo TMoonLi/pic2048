@@ -228,7 +228,7 @@ document.addEventListener('touchstart',function(event){
 });
 
 
-document.addEventListener('touchmove',function(event){
+document.addEventListener('touchend',function(event){
 	//changedTouches
 	event.preventDefault();
 	tox=event.changedTouches[0].pageX;
