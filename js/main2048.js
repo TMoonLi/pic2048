@@ -223,8 +223,8 @@ function generateOneNumber(){
 document.addEventListener('touchstart',function(event){
 	//touches.event
 	event.preventDefault();
-	startx=event.targetTouches[0].pageX;
-	starty=event.targetTouches[0].pageY;
+	startx=event.originalEvent.changedTouches[0].pageX;
+	starty=event.originalEvent.changedTouches[0].pageY;
     tox=startx
     toy=starty
 });
@@ -232,16 +232,17 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchmove',function(event){
 	//touches.event
 	event.preventDefault();
-	tox=event.targetTouches[0].pageX;
-	toy=event.targetTouches[0].pageY;
 });
 
 
 document.addEventListener('touchend',function(event){
 	//changedTouches
 	event.preventDefault();
+	tox=event.originalEvent.changedTouches[0].pageX;
+	toy=event.originalEvent.changedTouches[0].pageY;
 	var deltax=tox-startx;
 	var deltay=toy-starty;
+    alert(deltay)
 	
 	// 判断是否点击，小于某个值，不是移动操作
 	if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
