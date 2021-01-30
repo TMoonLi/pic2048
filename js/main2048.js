@@ -223,8 +223,8 @@ function generateOneNumber(){
 document.addEventListener('touchstart',function(event){
 	//touches.event
 	event.preventDefault();
-	startx=event.touches[0].pageX;
-	starty=event.touches[0].pageY;
+	startx=event.targetTouches[0].pageX;
+	starty=event.targetTouches[0].pageY;
     tox=startx
     toy=starty
 });
@@ -232,8 +232,8 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchmove',function(event){
 	//touches.event
 	event.preventDefault();
-	tox=event.touches[0].pageX;
-	toy=event.touches[0].pageY;
+	tox=event.targetTouches[0].pageX;
+	toy=event.targetTouches[0].pageY;
 });
 
 
