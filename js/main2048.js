@@ -228,6 +228,7 @@ document.addEventListener('touchstart',function(event){
 
 document.addEventListener('touchmove',function(event){
 	//touches.event
+	event.preventDefault();
 	tox=event.touches[0].pageX;
 	toy=event.touches[0].pageY;
 });
@@ -236,7 +237,7 @@ document.addEventListener('touchmove',function(event){
 document.addEventListener('touchend',function(event){
 	//changedTouches
 	event.preventDefault();
-	
+    alert('a')
 	var deltax=tox-startx;
 	var deltay=toy-starty;
 	
