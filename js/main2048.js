@@ -235,6 +235,9 @@ document.addEventListener('touchmove',function(event){
 });
 
 
+ $(document).touch("bottom",function(){
+        alert("bottom");
+    })
 document.addEventListener('touchend',function(event){
 	//changedTouches
 	event.preventDefault();
@@ -242,7 +245,6 @@ document.addEventListener('touchend',function(event){
 	toy=event.changedTouches[0].pageY;
 	var deltax=tox-startx;
 	var deltay=toy-starty;
-    alert(deltay)
 	
 	// 判断是否点击，小于某个值，不是移动操作
 	if(Math.abs(deltax)<0.2*documentWidth&&Math.abs(deltay)<0.2*documentWidth){
