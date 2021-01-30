@@ -184,44 +184,77 @@ function generateOneNumber(){
 	return true;
 }
 
-$(document).keydown(function(event){
-	switch(event.keyCode){
-		case 37://left
-			if(moveLeft()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
+// $(document).mousedown(function(e) {
+// 	e.preventDefault();
+
+//     startX = e.originalEvent.changedTouches[0].pageX,
+// 	startY = e.originalEvent.changedTouches[0].pageY;
+// 	alert(e);
+	
+// });
+// $(document).mouseup(function(e) {
+// 	e.preventDefault();
+	
+//     moveEndX = e.originalEvent.changedTouches[0].pageX,
+//     moveEndY = e.originalEvent.changedTouches[0].pageY,
+//     X = moveEndX - startX,
+//     Y = moveEndY - startY;
+     
+//     if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+//         alert("left 2 right");
+//     }
+//     else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+//         alert("right 2 left");
+//     }
+//     else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+//         alert("top 2 bottom");
+//     }
+//     else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+//         alert("bottom 2 top");
+//     }
+//     else{
+//         alert("just touch");
+// 	}
+// });
+// $(document).keydown(function(event){
+// 	switch(event.keyCode){
+// 		case 37://left
+// 			if(moveLeft()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
 				
-			}
+// 			}
 			
-			break;
-		case 38://up
-			if(moveUp()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
+// 			break;
+// 		case 38://up
+// 			if(moveUp()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
+// 			}
 			
-			break;
-		case 39://right
-			if(moveRight()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
+// 			break;
+// 		case 39://right
+// 			if(moveRight()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
+// 			}
 			
-			break;
-		case 40://down
-			if(moveDown()){
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isGameOver()",300);
-			}
-			break;
-		default: //default
-			break;
-	}
-});
+// 			break;
+// 		case 40://down
+// 			if(moveDown()){
+// 				setTimeout("generateOneNumber()",210);
+// 				setTimeout("isGameOver()",300);
+// 			}
+// 			break;
+// 		default: //default
+// 			break;
+// 	}
+// });
 
 
 document.addEventListener('touchstart',function(event){
 	//touches.event
+	event.preventDefault();
 	startx=event.touches[0].pageX;
 	starty=event.touches[0].pageY;
 });
@@ -229,6 +262,7 @@ document.addEventListener('touchstart',function(event){
 
 document.addEventListener('touchend',function(event){
 	//changedTouches
+	event.preventDefault();
 	tox=event.changedTouches[0].pageX;
 	toy=event.changedTouches[0].pageY;
 	
