@@ -255,6 +255,7 @@ function generateOneNumber(){
 document.addEventListener('touchstart',function(event){
 	//touches.event
 	event.preventDefault();
+    alert('a');
 	startx=event.touches[0].pageX;
 	starty=event.touches[0].pageY;
 });
@@ -263,6 +264,7 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchend',function(event){
 	//changedTouches
 	event.preventDefault();
+    alert('a');
 	tox=event.changedTouches[0].pageX;
 	toy=event.changedTouches[0].pageY;
 	
